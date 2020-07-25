@@ -16,19 +16,19 @@
     <main>
         <form>
             <label for="recipe-name">What's the recipe name?</label><br>
-            <input type="text" id="e"><br>
+            <input type="text" id="recipe-name" name="recipe"><br>
             <label for="picture">Picture of the result (URL)</label><br>
-            <input type="text" id="picture"><br>
+            <input type="text" id="picture" name="image"><br>
             <label for="cook-name">Who is the cook?</label><br>
-            <input type="text" id="cook-name"><br>
+            <input type="text" id="cook-name" name="author"><br>
             <label for="difficuly">What's the difficulty?</label><br>
-            <select name="dropdown" id="difficuly">
+            <select name="dropdown" id="difficuly" name="stuggle">
                 <option value="easy">Easy</option>
                 <option value="medium">Medium</option>
                 <option value="difficult">Difficult</option>
             </select><br>
             <label for="time">How much time does it take?</label><br>
-            <select name="dropdown" id="time">
+            <select name="dropdown" id="time" name="time">
                 <option value="15">Around 15min</option>
                 <option value="20">More than 15min</option>
                 <option value="30">About 30min</option>
@@ -36,12 +36,12 @@
                 <option value="60">An hour or more</option>
             </select><br>
             <label for="ingredients">The ingredients list.</label><br>
-            <input type="text" id="ingredients"><br>
+            <input type="text" id="ingredients" name="ingredients"><br>
             <div class="ingredients-button-container">
                 <button class="add-ingredients-button">Add a new ingredient to the list</button>
             </div>
             <label for="steps">The steps to make it.</label><br>
-            <input type="text" id="steps"><br>
+            <input type="text" id="steps" name="steps"><br>
             <div class="step-button-container">
                 <button class="add-step-button">Add a new step to the list</button>
             </div>

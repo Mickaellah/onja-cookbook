@@ -36,8 +36,15 @@ const handleStepButton = (event) => {
 }
 
 
+const handleSubmit = (event) => {
+    event.preventDefault;
+    console.log(form.value);
+};
+
+
 addIngredients.addEventListener('click', handleClick);
 addSteps.addEventListener('click', handleStepButton);
+submitButton.addEventListener('submit', handleSubmit);
 
 
 

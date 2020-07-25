@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookbook</title>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+    <header>
+        <h1>
+            Onja Cookbook.
+        </h1>
+    </header>
+    <main>
+        <form>
+            <label for="recipe-name">What's the recipe name?</label><br>
+            <input type="text" id="e"><br>
+            <label for="picture">Picture of the result (URL)</label><br>
+            <input type="text" id="picture"><br>
+            <label for="cook-name">Who is the cook?</label><br>
+            <input type="text" id="cook-name"><br>
+            <label for="difficuly">What's the difficulty?</label><br>
+            <select name="dropdown" id="difficuly">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="difficult">Difficult</option>
+            </select><br>
+            <label for="time">How much time does it take?</label><br>
+            <select name="dropdown" id="time">
+                <option value="15">Around 15min</option>
+                <option value="20">More than 15min</option>
+                <option value="30">About 30min</option>
+                <option value="45">Maybe 45min</option>
+                <option value="60">An hour or more</option>
+            </select><br>
+            <label for="ingredients">The ingredients list.</label><br>
+            <input type="text" id="ingredients"><br>
+            <button class="addBttn">Add a new ingredient to the list</button><br>
+            <label for="steps">The steps to make it.</label><br>
+            <input type="text" id="steps"><br>
+            <button>Add a new step to the list</button><br>
+
+            <div>
+                <button type="submit" class="submitbttn">Submit</button>
+            </div>
+
+        </form>
+
+    </main>
+</body>
+</html>

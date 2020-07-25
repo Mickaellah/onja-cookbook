@@ -38,6 +38,23 @@ const handleStepButton = (event) => {
 
 }
 
+// A function for the submit button to execute an object of the recipe.
+const handleSubmit = (event) => {
+    event.preventDefault;
+    const forms = event.target;
+    const addIngredients = document.querySelector('#ingredients');
+    const addSteps = document.querySelector('#steps');
+
+    const recipe = Array.from(forms).map(ele1 => {
+        const obj = {};
+        Array.from(ele1.querySelectorAll('[name]')).forEach(ele2 => {
+            obj[ele2.getAttribute('name')] = ele2.value;
+        });
+        return obj;
+    });
+    console.log(recipe);
+};
+
 
 
 

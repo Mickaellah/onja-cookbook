@@ -17,12 +17,12 @@
         <form>
             <fieldset>
                 <label for="recipe-name">What's the recipe name?</label>
-                <input type="text" id="recipe-name" name="recipe">
+                <input type="text" id="recipe-name" name="title">
             </fieldset>
 
             <fieldset>
                 <label for="picture">Picture of the result (URL)</label>
-                <input type="text" id="picture" name="image">
+                <input type="url" id="picture" name="picture">
             </fieldset>
 
             <fieldset>
@@ -31,8 +31,8 @@
             </fieldset>
 
             <fieldset>
-                <label for="difficuly">What's the difficulty?</label>
-                <select name="dropdown" id="difficuly" name="stuggle">
+                <label for="difficulty">What's the difficulty?</label>
+                <select id="difficulty" name="difficulty">
                     <option value="easy">Easy</option>
                     <option value="medium">Medium</option>
                     <option value="difficult">Difficult</option>
@@ -41,7 +41,7 @@
 
             <fieldset>
                 <label for="time">How much time does it take?</label>
-                <select name="dropdown" id="time" name="time">
+                <select id="time" name="timing">
                     <option value="15">Around 15min</option>
                     <option value="20">More than 15min</option>
                     <option value="30">About 30min</option>
@@ -52,17 +52,25 @@
 
             <fieldset>
                 <label for="ingredients">The ingredients list.</label>
-                <input type="text" id="ingredients" name="ingredients">
+                <ul id="ingredientsList">
+                    <li>
+                        <input type="text" id="ingredients" name="ingredients" value="ingredient1">
+                    </li>
+                </ul>
                 <div class="ingredients-button-container">
-                    <button class="add-ingredients-button">Add a new ingredient to the list</button>
+                    <button type="button" class="add-ingredients-button">Add a new ingredient to the list</button>
                 </div>
             </fieldset>
 
             <fieldset>
                 <label for="steps">The steps to make it.</label>
-                <input type="text" id="steps" name="steps">
+                <ul id="stepsList">
+                    <li>
+                        <input type="text" id="steps" name="steps" value="step1">
+                    </li>
+                </ul>
                 <div class="step-button-container">
-                    <button class="add-step-button">Add a new step to the list</button>
+                    <button type="button" class="add-step-button">Add a new step to the list</button>
                 </div>
             </fieldset>
 

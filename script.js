@@ -1,58 +1,73 @@
-console.log('Cool');
+// console.log('Cool');
 
 // Several variable that are for grabbing all the elements from the html file that might be used to build this project.
 const form = document.querySelector('form');
+const ingredientsList = document.querySelector("#ingredientsList");
+const stepsList = document.querySelector("#stepsList");
 const addIngredients = document.querySelector('.add-ingredients-button');
 const addSteps = document.querySelector('.add-step-button');
 const submitButton = document.querySelector('.submitbttn');
 const ingredientsButton = document.querySelector('.ingredients-button-container');
 const stepsButton = document.querySelector('.step-button-container');
+const recipes = [];
 
 
 // A function for the add ingredients button, which contains the html element for the new ingredient to be created.
 const handleClick = (event) => {
-    event.preventDefault();
+    const number = ingredientsList.children.length + 1;
     const inputHTML = `
-    <div>
-        <input type="text" id="ingredients" name="ingredients"><br>
-    <div>
+    <li>
+        <input id="ingredient${number}" type="text" id="ingredients" name="ingredients"><br>
+    </li>
     `;
-    event.target = inputHTML;
-    ingredientsButton.insertAdjacentHTML('afterbegin', inputHTML);
-    console.log(ingredientsButton);
+    ingredientsList.insertAdjacentHTML('beforeend', inputHTML);
+    console.log(ingredientsList);
 
 }
 
 
 // A function for the add steps button, which contains the html element for the new step to be created.
 const handleStepButton = (event) => {
-    event.preventDefault();
     const stepHTML = `
-    <div>
+    <li>
         <input type="text" id="steps" name="steps"><br>
-    <div>
+    </li>
     `;
-    event.target = stepHTML;
-    stepsButton.insertAdjacentHTML('afterbegin', stepHTML);
-    console.log(stepsButton);
+    stepsList.insertAdjacentHTML('beforeend', stepHTML);
+    console.log(stepsList);
 
 }
 
 // A function for the submit button to execute an object of the recipe.
 const handleSubmit = (event) => {
-    event.preventDefault;
-    const forms = event.target;
-    const addIngredients = document.querySelector('#ingredients');
-    const addSteps = document.querySelector('#steps');
+    event.preventDefault();
+    console.log('submit', event);
+    const form = event.currentTarget;
+    const {title, picture, author, difficulty, timing} = form;
 
-    const recipe = Array.from(forms).map(ele1 => {
-        const obj = {};
-        Array.from(ele1.querySelectorAll('[name]')).forEach(ele2 => {
-            obj[ele2.getAttribute('name')] = ele2.value;
-        });
-        return obj;
-    });
+    const ingredients = [];
+    for (let i = 0; i < ingredientsList.children.length; i++) {
+        ingredients.push(ingredientsList.children[i].children[0].value);
+    }
+    console.log(ingredients);
+
+    const steps = [];
+    for (stepChildren of stepsList.children) {
+        steps.push(stepChildren.children[0].value);
+    }
+    console.log(steps);
+
+    const recipe = {
+        title: title.value,
+        picture: picture.value,
+        author: author.value,
+        difficulty: difficulty.value,
+        timing: timing.value,
+        ingredients: ingredients,
+        steps: steps,
+    };
     console.log(recipe);
+    recipes.push(recipe);
 };
 
 
@@ -61,8 +76,5 @@ const handleSubmit = (event) => {
 // All three event listners for the two add buttons and one submit button.
 addIngredients.addEventListener('click', handleClick);
 addSteps.addEventListener('click', handleStepButton);
-submitButton.addEventListener('submit', handleSubmit);
-
-
-
+form.addEventListener('submit', handleSubmit);
 

@@ -33,6 +33,11 @@ select {
     margin: 16px;
 }
 
+ul {
+    list-style: none;
+    padding: 0;
+}
+
 button {
     width: 320px;
     background-color: goldenrod;
